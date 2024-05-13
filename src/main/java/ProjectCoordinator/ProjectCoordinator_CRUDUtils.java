@@ -106,7 +106,7 @@ public class ProjectCoordinator_CRUDUtils {
     public static List<Projects>saveProjects( String projectsName , String projectsStart , String projectsDeadline){
         List<Projects>saveProjects = new ArrayList<>();
         try(Connection connection = DBUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_ROLES)){
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROJECT)){
             preparedStatement.setString(1, projectsName);
             preparedStatement.setString(2, projectsStart);
             preparedStatement.setString(3, projectsDeadline);

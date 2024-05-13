@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ProjectCoordinator_database {
     Scanner scanner = new Scanner(System.in);
     public String greetings = "Welcome back Project Coordinator!\n" +
-            "Please select a number to continue working with this program , if you want to finish select 5";
+            "Please select a number to continue working with this program , if you want to finish select 8";
     public void showOptions(){
         System.out.println("1. Create a new project\n" +
                 "2. Assign a role\n" +

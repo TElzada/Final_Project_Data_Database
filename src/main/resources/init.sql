@@ -2,7 +2,7 @@ CREATE SCHEMA IF NOT EXISTS test;
 USE test;
 
 DROP TABLE IF EXISTS tasks;
-CREATE TABLE tasks(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , surname VARCHAR(100) , role VARCHAR (80), responsibility VARCHAR (100));
+CREATE TABLE tasks(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , surname VARCHAR(100) , role VARCHAR (80), responsibility VARCHAR (500));
 INSERT INTO tasks VALUES('Kevin' , 'Tran' , 'student-researcher', 'Participation in student projects and research, preparation of reports and presentations on research results');
 INSERT INTO tasks VALUES('Sam' ,'Winchester' , 'research advisor' , 'Support students in conducting research , evaluating research results and preparing recommendations');
 INSERT INTO tasks VALUES('Charlie' , 'Bradbury' , 'the expert', 'Participation in project evaluation');
