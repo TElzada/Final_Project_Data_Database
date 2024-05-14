@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ResearchAdvisor_database {
     Scanner scanner = new Scanner(System.in);
-    public String greetings = "Welcome back Research Manager!\n" +
+    public String greetings = "Welcome back Research Advisor!\n" +
             "Please select a number to continue working with this program , if you want to finish select 9";
     public void showOptions() {
         System.out.println("1. Show all projects\n" +

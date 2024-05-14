@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class TheExpert_database {
     Scanner scanner = new Scanner(System.in);
-    public String greetings = "Welcome back Project Coordinator!\n" +
-            "Please select a number to continue working with this program , if you want to finish select 8";
+    public String greetings = "Welcome back The Expert!\n" +
+            "Please select a number to continue working with this program , if you want to finish select 7";
     public void showOptions() {
         System.out.println("1. Show all projects\n" +
                 "2. Show the progress of the projects\n" +

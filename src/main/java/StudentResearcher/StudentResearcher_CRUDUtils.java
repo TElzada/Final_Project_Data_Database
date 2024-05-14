@@ -51,8 +51,7 @@ public class StudentResearcher_CRUDUtils {
 
                 projects.add(new Projects(id, name, start, deadline));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return projects;
@@ -69,11 +68,9 @@ public class StudentResearcher_CRUDUtils {
                 String name = rs.getString("name");
                 String status = rs.getString("status");
 
-
                 progressData.add(new Progress(id, name, status));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return progressData;
@@ -90,11 +87,9 @@ public class StudentResearcher_CRUDUtils {
                 String name = rs.getString("name");
                 String recommendation = rs.getString("recommendation");
 
-
                 recommendationData.add(new Recommendation(id, name, recommendation));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return recommendationData;
@@ -113,8 +108,7 @@ public class StudentResearcher_CRUDUtils {
 
                 evaluation.add(new Evaluation(id, name, grade));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return evaluation;

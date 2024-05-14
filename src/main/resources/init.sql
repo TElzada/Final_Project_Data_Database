@@ -1,6 +1,14 @@
 CREATE SCHEMA IF NOT EXISTS test;
 USE test;
 
+DROP TABLE IF EXISTS profiles;
+CREATE TABLE profiles(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , surname VARCHAR(90) , email VARCHAR (90) , age INTEGER , position VARCHAR (100));
+INSERT INTO profiles VALUES('Dean' , 'Winchester', 'impala67@gmail.com' , 46 , 'Project Coordinator');
+INSERT INTO profiles VALUES('Kevin' , 'Tran', 'kevintran@gmail.com' , 19 , 'Student-Researcher');
+INSERT INTO profiles VALUES('Sam' , 'Winchester', 'winchesterjr@gmail.com' , 42 , 'Research Advisor');
+INSERT INTO profiles VALUES('Charlie' , 'Bradbury', 'genius77@gmail.com' , 35 , 'The Expert');
+INSERT INTO profiles VALUES('Jimmy' , 'Novak', 'novak74@gmail.com' , 30 , 'System Manager');
+
 DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , surname VARCHAR(100) , role VARCHAR (80), responsibility VARCHAR (500));
 INSERT INTO tasks VALUES('Kevin' , 'Tran' , 'student-researcher', 'Participation in student projects and research, preparation of reports and presentations on research results');
