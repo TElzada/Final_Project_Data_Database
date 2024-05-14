@@ -1,9 +1,6 @@
 package Login_Password;
 
-import java.util.Scanner;
-
 public class Login_and_Password {
-    Scanner scanner = new Scanner(System.in);
     public String ProjectCoordinatorPassword = "2700789";
     public String ProjectCoordinatorLogin = "projCoordinator";
 
