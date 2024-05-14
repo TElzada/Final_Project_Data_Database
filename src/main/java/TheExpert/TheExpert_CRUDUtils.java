@@ -1,8 +1,10 @@
-package ResearchAdvisor;
+package TheExpert;
 
 import ProjectCoordinator.DBUtils;
 import ProjectCoordinator.Progress;
 import ProjectCoordinator.Projects;
+import ResearchAdvisor.Evaluation;
+import ResearchAdvisor.Recommendation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +13,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResearchAdvisor_CRUDUtils {
-    private static String UPDATE_RECOMMENDATIONS = "UPDATE recommendations SET recommendations = ? WHERE id = ?";
+public class TheExpert_CRUDUtils {
     private static String UPDATE_EVALUATION = "UPDATE projectEvaluation SET grade = ? WHERE id = ?";
+    public static List<Evaluation> updateEvaluation(String projectEvaluationGrade , int projectEvaluationId) {
+        List<Evaluation> updateEvaluation = new ArrayList<>();
+        try (Connection connection = DBUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_EVALUATION)) {
+            preparedStatement.setString(1, projectEvaluationGrade);
+            preparedStatement.setInt(2, projectEvaluationId);
+            preparedStatement.executeUpdate();
+
+            PreparedStatement allEvaluation = connection.prepareStatement("SELECT * FROM projectEvaluation");
+            ResultSet rs = allEvaluation.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                int grade = rs.getInt("grade");
+                updateEvaluation.add(new Evaluation(id, name, grade));
+            }
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return updateEvaluation;
+    }
     public static List<Projects> getProjectsData(String query) {
         List<Projects> projects = new ArrayList<>();
 
@@ -48,7 +70,7 @@ public class ResearchAdvisor_CRUDUtils {
 
                 progressData.add(new Progress(id, name, status));
             }
-        }catch (SQLException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return progressData;
@@ -90,47 +112,5 @@ public class ResearchAdvisor_CRUDUtils {
             throwables.printStackTrace();
         }
         return evaluation;
-    }
-    public static List<Recommendation>updateRecommendations(String recommendationsRecommendations , int recommendationsId) {
-        List<Recommendation> updateRecommendations = new ArrayList<>();
-        try (Connection connection = DBUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_RECOMMENDATIONS)) {
-            preparedStatement.setString(1, recommendationsRecommendations);
-            preparedStatement.setInt(2, recommendationsId);
-            preparedStatement.executeUpdate();
-
-            PreparedStatement allRecommendations = connection.prepareStatement("SELECT * FROM recommendations");
-            ResultSet rs = allRecommendations.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String recommendations = rs.getString("recommendations");
-                updateRecommendations.add(new Recommendation(id, name, recommendations));
-            }
-        }catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return updateRecommendations;
-    }
-    public static List<Evaluation>updateEvaluation(String projectEvaluationGrade , int projectEvaluationId) {
-        List<Evaluation> updateEvaluation = new ArrayList<>();
-        try (Connection connection = DBUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_EVALUATION)) {
-            preparedStatement.setString(1, projectEvaluationGrade);
-            preparedStatement.setInt(2, projectEvaluationId);
-            preparedStatement.executeUpdate();
-
-            PreparedStatement allEvaluation = connection.prepareStatement("SELECT * FROM projectEvaluation");
-            ResultSet rs = allEvaluation.executeQuery();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                int grade = rs.getInt("grade");
-                updateEvaluation.add(new Evaluation(id, name, grade));
-            }
-        }catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return updateEvaluation;
     }
 }

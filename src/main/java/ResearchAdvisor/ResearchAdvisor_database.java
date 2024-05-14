@@ -1,10 +1,7 @@
 package ResearchAdvisor;
 
 import ProjectCoordinator.Progress;
-import ProjectCoordinator.ProjectCoordinator_CRUDUtils;
 import ProjectCoordinator.Projects;
-import ProjectCoordinator.Task;
-import StudentResearcher.StudentResearcher_CRUDUtils;
 
 import java.util.List;
 import java.util.Scanner;

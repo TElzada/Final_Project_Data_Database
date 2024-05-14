@@ -16,7 +16,6 @@ INSERT INTO projects VALUES('Chat Application' , '03.03.24' , '25.05.24');
 INSERT INTO projects VALUES('Task planner' , '12.01.24' , '17.09.24');
 INSERT INTO projects VALUES('Safe Transport' , '21.11.23' , '21.12.24');
 
-
 DROP TABLE IF EXISTS progress;
 CREATE TABLE progress (id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , status VARCHAR(80));
 INSERT INTO progress VALUES('The Weather App' , 'In Process');
@@ -24,7 +23,6 @@ INSERT INTO progress VALUES('The Movies App' , 'In Process');
 INSERT INTO progress VALUES('Chat Application' , 'Finished');
 INSERT INTO progress VALUES('Task Planner' , 'Finished');
 INSERT INTO progress VALUES('Safe Transport' , 'In Process');
-
 
 DROP TABLE IF EXISTS recommendations;
 CREATE TABLE recommendations(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , recommendations VARCHAR(100));
@@ -34,7 +32,6 @@ INSERT INTO projects VALUES('Chat Application' , 'Everything is great , no recom
 INSERT INTO projects VALUES('Task Planner' , 'Everything is great , no recommendations needed');
 INSERT INTO projects VALUES('Safe Transport' , 'The look of the code is not great , has to be organized');
 
-
 DROP TABLE IF EXISTS projectEvaluation;
 CREATE TABLE projectEvaluation(id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(80), grade INTEGER);
 INSERT INTO projectEvaluation VALUES('The Weather App' , 70);
@@ -43,7 +40,6 @@ INSERT INTO projectEvaluation VALUES('Chat Application' , 95);
 INSERT INTO projectEvaluation VALUES('Task Planner', 97);
 INSERT INTO projectEvaluation VALUES('Safe Transport' , 30);
 
-
 DROP TABLE IF EXISTS projectBudgets;
 CREATE TABLE projectBudgets(id BIGINT PRIMARY KEY AUTO_INCREMENT , name VARCHAR(80) , budget VARCHAR(50));
 INSERT INTO TABLE projectBudgets VALUES('The Weather App' , '30000');
@@ -51,7 +47,6 @@ INSERT INTO TABLE projectBudgets VALUES('The Movies App' , '30000');
 INSERT INTO TABLE projectBudgets VALUES('Chat Application' , '20000');
 INSERT INTO TABLE projectBudgets VALUES('Task Planner' , '15000' );
 INSERT INTO TABLE projectBudgets VALUES('Safe Transport' , '50000');
-
 
 DROP TABLE IF EXISTS theWeatherApp;
 CREATE TABLE theWeatherApp (name VARCHAR(90) , languageUsed VARCHAR(80));

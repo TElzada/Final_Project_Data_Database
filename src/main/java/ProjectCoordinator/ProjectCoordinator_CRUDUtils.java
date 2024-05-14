@@ -27,7 +27,6 @@ public class ProjectCoordinator_CRUDUtils {
 
                 tasks.add(new Task(id ,name , surname, role , responsibility));
             }
-
         }catch (SQLException throwables){
             throwables.printStackTrace();
         }
@@ -96,8 +95,7 @@ public class ProjectCoordinator_CRUDUtils {
 
                 projects.add(new Projects(id, name, start, deadline));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return projects;
@@ -142,8 +140,7 @@ public class ProjectCoordinator_CRUDUtils {
 
                 progressData.add(new Progress(id, name, status));
             }
-
-        } catch (SQLException throwables) {
+        }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return progressData;
