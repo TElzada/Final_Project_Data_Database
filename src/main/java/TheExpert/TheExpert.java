@@ -8,7 +8,7 @@ import ResearchAdvisor.Recommendation;
 import java.util.List;
 import java.util.Scanner;
 
-public class TheExpert_database {
+public class TheExpert{
     Scanner scanner = new Scanner(System.in);
     public String greetings = "Welcome back The Expert!\n" +
             "Please select a number to continue working with this program , if you want to finish select 7";

@@ -6,7 +6,7 @@ import ProjectCoordinator.Projects;
 import java.util.List;
 import java.util.Scanner;
 
-public class ResearchAdvisor_database {
+public class ResearchAdvisor {
     Scanner scanner = new Scanner(System.in);
     public String greetings = "Welcome back Research Advisor!\n" +
             "Please select a number to continue working with this program , if you want to finish select 9";

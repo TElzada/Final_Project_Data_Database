@@ -5,9 +5,9 @@ import ProjectCoordinator.Task;
 import java.util.List;
 import java.util.Scanner;
 
-public class SystemManager_database {
+public class SystemManager {
     Scanner scanner = new Scanner(System.in);
-    public String greetings = "Welcome back The Expert!\n" +
+    public String greetings = "Welcome back System Manager!\n" +
             "Please select a number to continue working with this program , if you want to finish select 6";
     public void showOptions() {
         System.out.println("1. Show all profiles\n" +

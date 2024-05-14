@@ -1,7 +1,7 @@
 package ProjectCoordinator;
 import java.util.List;
 import java.util.Scanner;
-public class ProjectCoordinator_database {
+public class ProjectCoordinator {
     Scanner scanner = new Scanner(System.in);
     public String greetings = "Welcome back Project Coordinator!\n" +
             "Please select a number to continue working with this program , if you want to finish select 8";
