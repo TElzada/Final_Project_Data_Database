@@ -31,20 +31,20 @@ public class SystemManager_CRUDUtils {
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
                 int age = rs.getInt("age");
-                String position = rs.getString("position");
+                String positions = rs.getString("positions");
 
-                updateEmail.add(new Profiles(id, name, surname, email, age, position));
+                updateEmail.add(new Profiles(id, name, surname, email, age, positions));
             }
         }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return updateEmail;
     }
-    public static List<Profiles> updatePosition(String profilesPosition , int profilesId) {
+    public static List<Profiles> updatePosition(String profilesPositions , int profilesId) {
         List<Profiles> updatePosition = new ArrayList<>();
         try (Connection connection = DBUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_POSITION)) {
-            preparedStatement.setString(1, profilesPosition);
+            preparedStatement.setString(1, profilesPositions);
             preparedStatement.setInt(2, profilesId);
             preparedStatement.executeUpdate();
 
@@ -56,9 +56,9 @@ public class SystemManager_CRUDUtils {
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
                 int age = rs.getInt("age");
-                String position = rs.getString("position");
+                String positions = rs.getString("positions");
 
-                updatePosition.add(new Profiles(id, name, surname, email, age, position));
+                updatePosition.add(new Profiles(id, name, surname, email, age, positions));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -99,16 +99,16 @@ public class SystemManager_CRUDUtils {
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
                 int age = rs.getInt("age");
-                String position = rs.getString("position");
+                String positions = rs.getString("positions");
 
-                profiles.add(new Profiles(id, name, surname, email, age, position));
+                profiles.add(new Profiles(id, name, surname, email, age, positions));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return profiles;
     }
-    public static List<Profiles>createProfiles( String profilesName , String profilesSurname , String profilesEmail , int profilesAge , String profilesPosition) {
+    public static List<Profiles>createProfiles( String profilesName , String profilesSurname , String profilesEmail , int profilesAge , String profilesPositions) {
         List<Profiles> createProfiles = new ArrayList<>();
         try (Connection connection = DBUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROFILE)) {
@@ -116,7 +116,7 @@ public class SystemManager_CRUDUtils {
             preparedStatement.setString(2, profilesSurname);
             preparedStatement.setString(3, profilesEmail);
             preparedStatement.setInt(3, profilesAge);
-            preparedStatement.setString(3, profilesPosition);
+            preparedStatement.setString(3, profilesPositions);
             preparedStatement.executeUpdate();
 
             PreparedStatement allProfiles = connection.prepareStatement("SELECT * FROM profiles");
@@ -127,9 +127,9 @@ public class SystemManager_CRUDUtils {
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
                 int age = rs.getInt("age");
-                String position = rs.getString("position");
+                String positions = rs.getString("positions");
 
-                createProfiles.add(new Profiles(id, name, surname, email, age, position));
+                createProfiles.add(new Profiles(id, name, surname, email, age, positions));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -151,9 +151,9 @@ public class SystemManager_CRUDUtils {
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
                 int age = rs.getInt("age");
-                String position = rs.getString("position");
+                String positions = rs.getString("positions");
 
-                deleteProfile.add(new Profiles(id, name, surname, email, age, position));
+                deleteProfile.add(new Profiles(id, name, surname, email, age, positions));
             }
         }catch (SQLException throwables){
             throwables.printStackTrace();

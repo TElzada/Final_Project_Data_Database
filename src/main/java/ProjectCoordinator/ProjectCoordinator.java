@@ -8,7 +8,7 @@ public class ProjectCoordinator {
     public void showOptions(){
         System.out.println("1. Create a new project\n" +
                 "2. Assign a role\n" +
-                "3. Assign a responsibility" +
+                "3. Assign a responsibility\n" +
                 "4. Show the progress of the projects\n" +
                 "5. Show the deadlines of the projects\n" +
                 "6. Show the date of the start of the project\n" +

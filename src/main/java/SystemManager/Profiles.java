@@ -6,15 +6,15 @@ public class Profiles {
     private String surname;
     private String email;
     private int age;
-    private String position;
+    private String positions;
 
-    public Profiles(int id , String name , String surname , String email , int age , String position) {
+    public Profiles(int id , String name , String surname , String email , int age , String positions) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.age = age;
-        this.position = position;
+        this.positions = positions;
     }
     public int getId() {
         return id;
@@ -52,9 +52,21 @@ public class Profiles {
     }
 
     public String getPosition() {
-        return position;
+        return positions;
     }
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPosition(String positions) {
+        this.positions = positions;
+    }
+
+    @Override
+    public String toString() {
+        return "Profiles{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", positions='" + positions + '\'' +
+                '}';
     }
 }

@@ -23,7 +23,7 @@ public class StudentResearcher_CRUDUtils {
             preparedStatement.setInt(2, progressId);
             preparedStatement.executeUpdate();
 
-            PreparedStatement allProgress = connection.prepareStatement("SELECT * FROM tasks");
+            PreparedStatement allProgress = connection.prepareStatement("SELECT * FROM progress");
             ResultSet rs = allProgress.executeQuery();
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -85,9 +85,9 @@ public class StudentResearcher_CRUDUtils {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                String recommendation = rs.getString("recommendation");
+                String recommendations = rs.getString("recommendations");
 
-                recommendationData.add(new Recommendation(id, name, recommendation));
+                recommendationData.add(new Recommendation(id, name, recommendations));
             }
         }catch (SQLException throwables) {
             throwables.printStackTrace();

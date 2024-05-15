@@ -3,12 +3,12 @@ package ResearchAdvisor;
 public class Recommendation {
     private int id;
     private String name;
-    private String recommendation;
+    private String recommendations;
 
-    public Recommendation(int id , String name , String recommendation) {
+    public Recommendation(int id , String name , String recommendations) {
         this.id =id;
         this.name = name;
-        this.recommendation = recommendation;
+        this.recommendations = recommendations;
     }
 
     public int getId() {
@@ -27,12 +27,12 @@ public class Recommendation {
         this.name = name;
     }
 
-    public String getRecommendation() {
-        return recommendation;
+    public String getRecommendations() {
+        return recommendations;
     }
 
-    public void setRecommendation(String recommendation) {
-        this.recommendation = recommendation;
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Recommendation {
         return "Recommendation{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", recommendation='" + recommendation + '\'' +
+                ", recommendations='" + recommendations + '\'' +
                 '}';
     }
 }

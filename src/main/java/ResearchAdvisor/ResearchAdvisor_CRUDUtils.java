@@ -63,9 +63,9 @@ public class ResearchAdvisor_CRUDUtils {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                String recommendation = rs.getString("recommendation");
+                String recommendations = rs.getString("recommendations");
 
-                recommendationData.add(new Recommendation(id, name, recommendation));
+                recommendationData.add(new Recommendation(id, name, recommendations));
             }
         }catch (SQLException throwables) {
             throwables.printStackTrace();
